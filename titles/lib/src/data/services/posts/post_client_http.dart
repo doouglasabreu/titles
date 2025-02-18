@@ -20,7 +20,7 @@ class TitleClientHttp {
             .toList();
       });
       return posts;
-    } on DioException catch (e) {
+    } on DioException {
       return Failure(ClientExeception("Erro no client"));
     }
   }
@@ -30,9 +30,8 @@ class TitleClientHttp {
       await _clientHttp.post(
           'https://jsonplaceholder.typicode.com/posts', title.toJson());
       return Success(title);
-    } catch (e) {
-      return Failure(
-          Exception(e.toString())); // Retorna uma falha com uma exceção
+    } on DioException {
+      return Failure(ClientExeception("Erro no client"));
     }
   }
 }

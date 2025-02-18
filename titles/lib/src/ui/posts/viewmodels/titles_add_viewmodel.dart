@@ -32,7 +32,7 @@ class TitlesAddViewmodel extends GetxController {
                 snackPosition: SnackPosition.BOTTOM,
                 backgroundColor: Colors.red,
                 colorText: Colors.white,
-                duration: Duration(seconds: 3),
+                duration: const Duration(seconds: 3),
               )
             });
     _isLoading.value = false;

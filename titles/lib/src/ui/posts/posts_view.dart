@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import 'package:titles/src/ui/posts/post_add_view.dart';
 import 'package:titles/src/ui/posts/post_view.dart';
 import 'package:titles/src/ui/posts/viewmodels/titles_viewmodel.dart';
 
@@ -30,20 +29,20 @@ class _TitlesViewState extends State<TitlesView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Posts"),
+          title: const Text("Posts"),
           actions: [
             IconButton(
                 onPressed: () {
                   _controller.newPost();
                 },
-                icon: Icon(Icons.add))
+                icon: const Icon(Icons.add))
           ],
         ),
         body: Obx(() {
           return _controller.isLoading.value
-              ? Center(child: CircularProgressIndicator())
+              ? const Center(child: CircularProgressIndicator())
               : _controller.titles.isEmpty
-                  ? Text("Nenhum post disponível")
+                  ? const Text("Nenhum post disponível")
                   : ListView.builder(
                       itemCount: _controller.titles.length,
                       itemBuilder: (context, index) {
@@ -60,9 +59,9 @@ class _TitlesViewState extends State<TitlesView> {
                           ),
                           trailing: IconButton(
                             onPressed: () {
-                              Get.to(() => PostView(), arguments: post);
+                              Get.to(() => const PostView(), arguments: post);
                             },
-                            icon: Icon(Icons.arrow_forward_ios_rounded),
+                            icon: const Icon(Icons.arrow_forward_ios_rounded),
                           ),
                         );
                       },

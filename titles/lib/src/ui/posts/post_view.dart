@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:titles/src/domain/entities/title_entity.dart';
 
 class PostView extends StatelessWidget {
@@ -11,7 +10,7 @@ class PostView extends StatelessWidget {
     final post = Get.arguments as Post;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Visualizar Post'),
+        title: const Text('Visualizar Post'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -20,17 +19,17 @@ class PostView extends StatelessWidget {
           children: [
             Text(
               post.title,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               'Autor id: ${post.userId}',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               post.body,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ],
         ),

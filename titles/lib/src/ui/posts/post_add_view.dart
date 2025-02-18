@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
@@ -25,7 +24,7 @@ class _TitleAddViewState extends State<TitleAddView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Criar Novo Post'),
+        title: const Text('Criar Novo Post'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -36,7 +35,7 @@ class _TitleAddViewState extends State<TitleAddView> {
               children: [
                 TextFormField(
                   controller: _controller.titleController,
-                  decoration: InputDecoration(labelText: 'Título'),
+                  decoration: const InputDecoration(labelText: 'Título'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Por favor, insira o título';
@@ -48,7 +47,7 @@ class _TitleAddViewState extends State<TitleAddView> {
                 ),
                 TextFormField(
                   controller: _controller.contentController,
-                  decoration: InputDecoration(labelText: 'Conteúdo'),
+                  decoration: const InputDecoration(labelText: 'Conteúdo'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Por favor, insira o conteúdo';
@@ -60,7 +59,7 @@ class _TitleAddViewState extends State<TitleAddView> {
                 ),
                 TextFormField(
                   controller: _controller.authorIdController,
-                  decoration: InputDecoration(labelText: 'ID do Autor'),
+                  decoration: const InputDecoration(labelText: 'ID do Autor'),
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -74,7 +73,7 @@ class _TitleAddViewState extends State<TitleAddView> {
                 ),
                 TextFormField(
                   controller: _controller.titleIdController,
-                  decoration: InputDecoration(labelText: 'ID do Título'),
+                  decoration: const InputDecoration(labelText: 'ID do Título'),
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -86,17 +85,17 @@ class _TitleAddViewState extends State<TitleAddView> {
                     return null;
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Obx(() {
                   return _controller.isLoading.value
-                      ? CircularProgressIndicator()
+                      ? const CircularProgressIndicator()
                       : ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               _controller.savePost();
                             }
                           },
-                          child: Text('Criar Post'),
+                          child: const Text('Criar Post'),
                         );
                 }),
               ],

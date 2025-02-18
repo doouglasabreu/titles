@@ -28,7 +28,7 @@ class TitlesViewmodel extends GetxController {
   }
 
   newPost() async {
-    var result = await Get.to(() => TitleAddView());
+    var result = await Get.to(() => const TitleAddView());
 
     if (result != null) {
       titles.add(result);
