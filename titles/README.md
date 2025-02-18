@@ -1,16 +1,35 @@
-# titles
+# Aplicativo de Posts
 
-A new Flutter project.
+Um aplicativo que permite aos usuários criar postagens
 
-## Getting Started
+## Requisitos
 
-This project is a starting point for a Flutter application.
+Flutter v 3.22.2; (https://docs.flutter.dev/get-started/install)
 
-A few resources to get you started if this is your first Flutter project:
+## Instalação
+Para instalar, clone o repositório, e instale os pacotes:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+git clone https://github.com/doouglasabreu/titles.git
+flutter pub get
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Compilação
+Para executar:
+```
+flutter run
+```
+## Dependências
+Este projeto utiliza as seguintes dependências:
+
+result_dart - manipulação de resultados (sucesso/erro).
+
+shared_preferences - armazenamento dados localmente no dispositivo.
+
+dio - cliente HTTP para comunicação com APIs.
+
+get_it - Serviço de injeção de dependências para gerenciamento de instâncias.
+
+get - Framework para gerenciamento de estado e navegação.
+
+## 
