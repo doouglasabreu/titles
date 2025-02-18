@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import 'package:titles/src/ui/titles/title_add_view.dart';
-import 'package:titles/src/ui/titles/viewmodels/titles_viewmodel.dart';
+import 'package:titles/src/ui/posts/post_add_view.dart';
+import 'package:titles/src/ui/posts/post_view.dart';
+import 'package:titles/src/ui/posts/viewmodels/titles_viewmodel.dart';
 
 class TitlesView extends StatefulWidget {
   const TitlesView({super.key});
@@ -23,7 +24,6 @@ class _TitlesViewState extends State<TitlesView> {
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
   }
 
   @override
@@ -34,7 +34,7 @@ class _TitlesViewState extends State<TitlesView> {
           actions: [
             IconButton(
                 onPressed: () {
-                  Get.to(() => TitleAddView());
+                  _controller.newPost();
                 },
                 icon: Icon(Icons.add))
           ],
@@ -60,7 +60,7 @@ class _TitlesViewState extends State<TitlesView> {
                           ),
                           trailing: IconButton(
                             onPressed: () {
-                              //Get.to(() => PostDetailPage(), arguments: post);
+                              Get.to(() => PostView(), arguments: post);
                             },
                             icon: Icon(Icons.arrow_forward_ios_rounded),
                           ),

@@ -1,12 +1,13 @@
 import 'package:get/get.dart';
-import 'package:titles/src/data/repositories/title/title_repository.dart';
+import 'package:titles/src/data/repositories/post/post_repository.dart';
 import 'package:titles/src/domain/entities/title_entity.dart';
+import 'package:titles/src/ui/posts/post_add_view.dart';
 
 class TitlesViewmodel extends GetxController {
   final TitleRepository _titleRepository;
 
-  final List<Title> _titles = <Title>[].obs;
-  List<Title> get titles => _titles;
+  final List<Post> _titles = <Post>[].obs;
+  List<Post> get titles => _titles;
 
   final RxBool _isLoading = false.obs;
   RxBool get isLoading => _isLoading;
@@ -16,7 +17,7 @@ class TitlesViewmodel extends GetxController {
   getTitles() async {
     _isLoading.value = true;
 
-    var result = await _titleRepository.getTitles();
+    var result = await _titleRepository.getPosts();
     result.fold((r) {
       _titles.addAll(r);
     }, (l) {
@@ -24,5 +25,13 @@ class TitlesViewmodel extends GetxController {
     });
 
     _isLoading.value = false;
+  }
+
+  newPost() async {
+    var result = await Get.to(() => TitleAddView());
+
+    if (result != null) {
+      titles.add(result);
+    }
   }
 }

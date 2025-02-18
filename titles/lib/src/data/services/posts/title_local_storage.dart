@@ -11,15 +11,15 @@ class TitleLocalStorage {
 
   TitleLocalStorage(this._localStorage);
 
-  AsyncResult<List<Title>> getTitles() {
+  AsyncResult<List<Post>> getTitles() {
     return _localStorage //
         .getData(_titleKey)
         .map((json) => (json as List)
-            .map((title) => Title.fromJson(jsonDecode(title))) //
+            .map((title) => Post.fromJson(jsonDecode(title))) //
             .toList());
   }
 
-  AsyncResult<List<Title>> saveTitle(List<Title> titles) {
+  AsyncResult<List<Post>> saveTitle(List<Post> titles) {
     return _localStorage //
         .saveData(_titleKey, jsonEncode(titles))
         .pure(titles);

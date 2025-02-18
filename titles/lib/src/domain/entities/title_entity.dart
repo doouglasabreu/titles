@@ -1,17 +1,17 @@
-class Title {
+class Post {
   int id;
   int userId;
   String title;
   String body;
 
-  Title({
+  Post({
     required this.id,
     required this.userId,
     required this.title,
     required this.body,
   });
 
-  factory Title.fromJson(Map<String, Object?> json) => Title(
+  factory Post.fromJson(Map<String, Object?> json) => Post(
         id: json['id'] as int,
         userId: json['userId'] as int,
         title: json['title'] as String,
