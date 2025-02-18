@@ -1,0 +1,2 @@
+C:/Users/dvdea/Documents/GitHub/titles/titles/android/app/.cxx/Debug/64305159/x86/CMakeFiles/edit_cache.dir
+C:/Users/dvdea/Documents/GitHub/titles/titles/android/app/.cxx/Debug/64305159/x86/CMakeFiles/rebuild_cache.dir
